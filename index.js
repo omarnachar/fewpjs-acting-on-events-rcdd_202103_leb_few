@@ -8,8 +8,21 @@ function moveDodgerLeft() {
     dodger.style.left = `${left - 1}px`;
   }
 }
+function moveDodgerRight() {
+  let RightNumbers = dodger.style.right.replace("px", "");
+  let Right = parseInt(RightNumbers, 10);
+
+  if (left > 0) {
+    dodger.style.right = `${left - 1}px`;
+  }
+}
 document.addEventListener("keydown", function(e) {
   if (e.key === "ArrowLeft") {
     moveDodgerLeft();
+  }
+});
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowRight") {
+    moveDodgerRight();
   }
 });
